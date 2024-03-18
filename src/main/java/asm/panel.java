@@ -46,12 +46,32 @@ List<Employee> list = new ArrayList<>();
         }
     }
 
-    public void sort(){
+    public void sortName(){
         Collections.sort(list, ((emp1, emp2) ->
-                (emp1.getMaNV().compareTo(emp2.getMaNV()))));
+                (emp1.getHoTen().compareTo(emp2.getHoTen()))));
         fillToTable();
     }
 
+    public Employee idNv( String id){
+        for (Employee emp : list) {
+            if (emp.getMaNV().equalsIgnoreCase(id)){
+                return emp;
+            }
+        }
+        return null;
+    }
+
+    public void update(Employee empNV){
+        Employee emp1 = idNv(empNV.getMaNV());
+        if (emp1 == null){
+            emp1.setHoTen(empNV.getHoTen());
+            emp1.setTuoi(empNV.getTuoi());
+            emp1.setLuong(empNV.getLuong());
+            emp1.setEmail(empNV.getEmail());
+        } else {
+            JOptionPane.showMessageDialog(this,"đã có đối tượng này trong list");
+        }
+    }
     public void selectRow(int index){
 
         txtHoTen.setText(list.get(index).getHoTen());
@@ -61,7 +81,6 @@ List<Employee> list = new ArrayList<>();
         txtLuong.setText(String.valueOf(list.get(index).getLuong()));
 
     }
-
     //button
 
     public void newButton(){
@@ -70,17 +89,21 @@ List<Employee> list = new ArrayList<>();
         txtLuong.setText("");
         txtTuoi.setText("");
         txtMail.setText("");
+        index = -1;
     }
 
     public void saveButton(){
-        list.add(readForm());
-        if (index != -1) {
-            list.remove(index);
+        if (index == -1) {
+            list.add(readForm());
+            JOptionPane.showMessageDialog(this,"da them");
+        }else {
+            update(readForm());
+            JOptionPane.showMessageDialog(this, "Đã Thêm Vào");
         }
-            sort();
+            sortName();
             fillToTable();
             newButton();
-        JOptionPane.showMessageDialog(this, "Đã Thêm Vào");
+
     }
 
     public void deleteButton(){
@@ -464,4 +487,3 @@ List<Employee> list = new ArrayList<>();
     private javax.swing.JTextField txtTuoi;
     // End of variables declaration//GEN-END:variables
 }
-
