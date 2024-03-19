@@ -5,11 +5,13 @@ import model.Employee;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class panel extends javax.swing.JPanel {
 DefaultTableModel tableModel;
 List<Employee> list = new ArrayList<>();
+    int index = -1;
 
     public panel() {
         initComponents();
@@ -44,6 +46,11 @@ List<Employee> list = new ArrayList<>();
         }
     }
 
+    public void sort(){
+        Collections.sort(list, ((emp1, emp2) ->
+                (emp1.getMaNV().compareTo(emp2.getMaNV()))));
+        fillToTable();
+    }
 
     public void selectRow(int index){
 
@@ -54,6 +61,7 @@ List<Employee> list = new ArrayList<>();
         txtLuong.setText(String.valueOf(list.get(index).getLuong()));
 
     }
+
     //button
 
     public void newButton(){
@@ -65,18 +73,21 @@ List<Employee> list = new ArrayList<>();
     }
 
     public void saveButton(){
-        int index =tblALl.getSelectedRowCount();
-        selectRow(index);
         list.add(readForm());
         if (index != -1) {
             list.remove(index);
-            fillToTable();
         }
+            sort();
+            fillToTable();
+            newButton();
         JOptionPane.showMessageDialog(this, "Đã Thêm Vào");
     }
 
     public void deleteButton(){
-
+        list.remove(index);
+        fillToTable();
+        newButton();
+        JOptionPane.showMessageDialog(this, "Đã Xoá");
     }
 
     public void findButton(){
@@ -87,7 +98,7 @@ List<Employee> list = new ArrayList<>();
     }
 
     public void exitButton(){
-
+        System.exit(0);
     }
 
 
@@ -420,7 +431,7 @@ List<Employee> list = new ArrayList<>();
     }//GEN-LAST:event_BtnExitActionPerformed
 
     private void tblALlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblALlMouseClicked
-        int index = tblALl.getSelectedRow();
+        index = tblALl.getSelectedRow();
         selectRow(index);
     }//GEN-LAST:event_tblALlMouseClicked
 
@@ -453,3 +464,4 @@ List<Employee> list = new ArrayList<>();
     private javax.swing.JTextField txtTuoi;
     // End of variables declaration//GEN-END:variables
 }
+
