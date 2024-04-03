@@ -329,13 +329,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="btnLeft" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="btnTop" min="-2" pref="44" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnThua" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnPrev" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="btnThua2" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnNext" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnRight" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="btnBottom" min="-2" pref="44" max="-2" attributes="0"/>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -345,10 +345,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnLeft" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnTop" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnRight" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnThua" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnThua2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrev" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
@@ -356,12 +356,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnLeft">
+        <Component class="javax.swing.JButton" name="btnTop">
           <Properties>
             <Property name="text" type="java.lang.String" value="|&lt;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLeftActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTopAction"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnRight">
@@ -369,23 +369,23 @@
             <Property name="text" type="java.lang.String" value="&gt;|"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRightActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRightAction"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnThua2">
+        <Component class="javax.swing.JButton" name="btnPrev2">
           <Properties>
             <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThua2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNext2Action"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnThua">
+        <Component class="javax.swing.JButton" name="btnPrev">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThuaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrevAction"/>
           </Events>
         </Component>
       </SubComponents>

@@ -1,19 +1,18 @@
 package model;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
     private String maNV, hoTen, email;
     private double luong;
     private int tuoi;
 
-    public Employee(String maNV, String hoTen, int tuoi ,String email ,double luong ) {
+    public Employee(String maNV, String hoTen, int tuoi, String email, double luong) {
         this.maNV = maNV;
         this.hoTen = hoTen;
         this.email = email;
         this.luong = luong;
         this.tuoi = tuoi;
-    }
-
-    public Employee() {
     }
 
     public String getMaNV() {
