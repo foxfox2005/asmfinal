@@ -1,7 +1,8 @@
-package asm;
+package asm.filetemp;
 
 import java.awt.event.*;
 
+import asm.FileManager;
 import model.Employee;
 
 import javax.swing.*;
@@ -177,7 +178,7 @@ public class panel extends javax.swing.JPanel {
         tblALl = new JTable();
         jPanel3 = new JPanel();
         btnTop = new JButton();
-        btnBottom = new JButton();
+        btnRight = new JButton();
         btnNext = new JButton();
         btnPrev = new JButton();
 
@@ -356,8 +357,8 @@ public class panel extends javax.swing.JPanel {
             btnTop.addActionListener(e -> btnTopAction(e));
 
             //---- btnRight ----
-            btnBottom.setText(">|");
-            btnBottom.addActionListener(e -> btnBottomAction(e));
+            btnRight.setText(">|");
+            btnRight.addActionListener(e -> btnRightAction(e));
 
             //---- btnThua2 ----
             btnNext.setText(">>");
@@ -379,7 +380,7 @@ public class panel extends javax.swing.JPanel {
                                     .addGap(12, 12, 12)
                                     .addComponent(btnNext, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnBottom, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnRight, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                     .addContainerGap(19, Short.MAX_VALUE))
             );
             jPanel3Layout.setVerticalGroup(
@@ -388,7 +389,7 @@ public class panel extends javax.swing.JPanel {
                                     .addContainerGap()
                                     .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                             .addComponent(btnTop)
-                                            .addComponent(btnBottom)
+                                            .addComponent(btnRight)
                                             .addComponent(btnPrev)
                                             .addComponent(btnNext))
                                     .addContainerGap(29, Short.MAX_VALUE))
@@ -446,7 +447,7 @@ public class panel extends javax.swing.JPanel {
 
     }
 
-    private void btnBottomAction(java.awt.event.ActionEvent evt) {
+    private void btnRightAction(java.awt.event.ActionEvent evt) {
         index = EmployeeList.size() - 1;
         selectRow(index);
         tblALl.setRowSelectionInterval(index, index);
@@ -529,7 +530,7 @@ public class panel extends javax.swing.JPanel {
     private JTable tblALl;
     private JPanel jPanel3;
     private JButton btnTop;
-    private JButton btnBottom;
+    private JButton btnRight;
     private JButton btnNext;
     private JButton btnPrev;
     // End of variables declaration//GEN-END:variables
