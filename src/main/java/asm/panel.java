@@ -22,6 +22,7 @@ public class panel extends javax.swing.JPanel {
         initComponents();
         tablelSet();
         initData();
+        sortNV();
         fillToTable();
     }
 
@@ -51,7 +52,7 @@ public class panel extends javax.swing.JPanel {
             return null;
         }
 
-        if (!txtTuoi.getText().matches("\\d+") || !txtLuong.getText().matches("\\d+")) {
+        if (!txtTuoi.getText().matches("\\d+") || !txtLuong.getText().matches("\\d.+")) {
             JOptionPane.showMessageDialog(this, "Tuổi và lương phải là số");
             return null;
         }
@@ -71,8 +72,8 @@ public class panel extends javax.swing.JPanel {
         }
     }
 
-    public void sortName() {
-        Collections.sort(EmployeeList, ((emp1, emp2) -> (emp1.getHoTen().compareTo(emp2.getHoTen()))));
+    public void sortNV() {
+        Collections.sort(EmployeeList, ((emp1, emp2) -> (emp1.getMaNV().compareTo(emp2.getMaNV()))));
         fillToTable();
     }
 
@@ -147,6 +148,8 @@ public class panel extends javax.swing.JPanel {
         fileManager.writeFile((ArrayList<Employee>) EmployeeList);
         System.exit(0);
     }
+
+
 
 
     @SuppressWarnings("unchecked")
@@ -476,10 +479,12 @@ public class panel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         saveButton();
+        sortNV();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         deleteButton();
+        sortNV();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed

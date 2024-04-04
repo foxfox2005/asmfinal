@@ -20,7 +20,7 @@ public class FileManager {
         return instance;
     }
 
-    public static File chooseFile() {
+    public static File chooseFile() { //pick file
         String userhome = System.getProperty("user.home");
         JFileChooser fileChooser = new JFileChooser(userhome + "\\Desktop");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -48,7 +48,7 @@ public class FileManager {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] data = line.split("\\|");
-                Employee employee = new Employee(data[0], data[1], Integer.parseInt(data[2]), data[3], Double.parseDouble(data[4]));
+                Employee employee = new Employee(data[0], data[1], Integer.parseInt(data[2]), data[3], Float.parseFloat(data[4]));
                 employees.add(employee);
             }
         } catch (IOException e) {
